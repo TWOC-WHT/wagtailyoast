@@ -42,6 +42,7 @@ export default class Panel extends WithContext {
       const contentSelector = this.$yoastContentSelector.val();
       return $($.parseHTML(result)).filter(contentSelector).text();
     }
+    console.log(result);
     return result;
   }
 
