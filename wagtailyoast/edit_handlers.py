@@ -8,7 +8,7 @@ class YoastPanel(ObjectList):
 
     def __init__(self, keywords='keywords', title='seo_title',
                  search_description='search_description', slug='slug',
-                 heading='Yoast', content_selector='content_selector', *args, **kwargs):
+                 heading='Yoast', content_selector=None, *args, **kwargs):
         """
         Panel used by a wagtail Page
 
