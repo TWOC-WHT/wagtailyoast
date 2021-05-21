@@ -38,12 +38,8 @@ export default class Panel extends WithContext {
       url: previewUrl,
       type: 'GET',
     });
-    if (this.$yoastContentSelector) {
-      const contentSelector = this.$yoastContentSelector.val();
+      const contentSelector = '.article-tba';
       return $($.parseHTML(result)).filter(contentSelector).text();
-    }
-    console.log(this.$yoastContentSelector);
-    return result;
   }
 
   /**
