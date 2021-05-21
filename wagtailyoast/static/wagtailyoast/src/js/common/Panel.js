@@ -77,7 +77,7 @@ export default class Panel extends WithContext {
     }).then(() => {
       this.$yoastPanel = $('#yoast_panel');
       this.$yoastKeywords = this.$yoastPanel.find('#yoast_keywords');
-      this.$yoastContentSelector = this.$yoastPanel.find('#yoast_content_selector');
+      this.$yoastContentSelector = ".article-tba";
       this.$yoastTitle = $(`#id_${this.$yoastPanel.find('#yoast_title').data('field')}`);
       this.$yoastSearchDescription = $(`#id_${this.$yoastPanel.find('#yoast_search_description').data('field')}`);
       this.$yoastSlug = $(`#id_${this.$yoastPanel.find('#yoast_slug').data('field')}`);
