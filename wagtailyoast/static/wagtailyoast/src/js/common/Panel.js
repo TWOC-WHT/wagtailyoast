@@ -38,16 +38,12 @@ export default class Panel extends WithContext {
       url: previewUrl,
       type: 'GET',
     });
-      const contentSelector = '.article-tba';
-      var new_result;
-      var elements = result.getElementsByClassName(contentSelector);
-      for (var i = 0; i < elements.length; i++) {
-        //Get the HTML element from the HTMLCollection object.
-        new_result += elements.item(i);
-        //Log the text inside the list item to the console.
+    if (this.$yoastContentSelector) {
+      const contentSelector = this.$yoastContentSelector.val();
+      return $($.parseHTML(result)).filter(contentSelector).text();
     }
-      return new_result;
-
+    console.log(result);
+    return result;
   }
 
   /**
@@ -81,7 +77,7 @@ export default class Panel extends WithContext {
     }).then(() => {
       this.$yoastPanel = $('#yoast_panel');
       this.$yoastKeywords = this.$yoastPanel.find('#yoast_keywords');
-      this.$yoastContentSelector = ".article-tba";
+      this.$yoastContentSelector = this.$yoastPanel.find('#yoast_content_selector');
       this.$yoastTitle = $(`#id_${this.$yoastPanel.find('#yoast_title').data('field')}`);
       this.$yoastSearchDescription = $(`#id_${this.$yoastPanel.find('#yoast_search_description').data('field')}`);
       this.$yoastSlug = $(`#id_${this.$yoastPanel.find('#yoast_slug').data('field')}`);
