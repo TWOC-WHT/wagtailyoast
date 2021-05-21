@@ -46,7 +46,7 @@ export default class Panel extends WithContext {
         new_result += elements.item(i);
         //Log the text inside the list item to the console.
     }
-      return result;
+      return new_result;
 
   }
 
