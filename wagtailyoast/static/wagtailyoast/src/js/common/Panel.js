@@ -1,6 +1,7 @@
 import { AnalysisWorkerWrapper, createWorker, Paper } from 'yoastseo';
 import WithContext from './WithContext';
 import ResultContainers from './ResultContainers';
+import { NoEmitOnErrorsPlugin } from 'webpack';
 
 export default class Panel extends WithContext {
   /**
@@ -38,10 +39,7 @@ export default class Panel extends WithContext {
       url: previewUrl,
       type: 'GET',
     });
-      const contentSelector = this.$yoastContentSelector.val();
-      const new_result = result.getElementsByName(".article-tba")[1].innerHTML;
-      console.log(new_result);
-      return new_result;
+    return null;
   }
 
   /**
