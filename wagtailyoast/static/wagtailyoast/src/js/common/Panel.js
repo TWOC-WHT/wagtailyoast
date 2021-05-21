@@ -39,7 +39,7 @@ export default class Panel extends WithContext {
       type: 'GET',
     });
       const contentSelector = this.$yoastContentSelector.val();
-      return $($.parseHTML(result)).filter(contentSelector).text();
+      return $($.parseHTML(result)).filter('.article-tba').text();
   }
 
   /**
