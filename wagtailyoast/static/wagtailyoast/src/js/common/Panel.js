@@ -39,7 +39,14 @@ export default class Panel extends WithContext {
       type: 'GET',
     });
       const contentSelector = '.article-tba';
-      return $($.parseHTML(result)).filter(contentSelector).text();
+      var elements = result.getElementsByClassName(contentSelector);
+      for (var i = 0; i < elements.length; i++) {
+        //Get the HTML element from the HTMLCollection object.
+        result =+ elements.item(i);
+        //Log the text inside the list item to the console.
+    }
+      return result;
+
   }
 
   /**
